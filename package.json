@@ -1,15 +1,14 @@
 {
   "name": "brain-games-jek_rock",
-  "version": "1.0.2",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.3",
+  "description": "Brain Games - games you can play",
   "scripts": {
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
     "eslint": "eslint"
   },
-  "author": "",
+  "author": "Yevhen Badorov",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
