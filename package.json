@@ -1,6 +1,6 @@
 {
   "name": "brain-games-jek_rock",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Brain Games - games you can play",
   "scripts": {
     "babel-node": "babel-node",
@@ -25,7 +25,8 @@
     "readline-sync": "^1.4.9"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"

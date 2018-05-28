@@ -1,7 +1,14 @@
 import readlineSync from 'readline-sync';
 
-export default () => {
+export const askUserName = () => {
   const name = readlineSync.question('May I have your name? ');
 
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!\n`);
+
+  return name;
 };
+
+
+export const random = (from, to) => Math.floor(Math.random() * to) + from;
+
+export const isEven = number => number % 2 === 0;
