@@ -8,7 +8,4 @@ export const askUserName = () => {
   return name;
 };
 
-
 export const random = (from, to) => Math.floor(Math.random() * to) + from;
-
-export const isEven = number => number % 2 === 0;

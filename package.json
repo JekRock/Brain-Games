@@ -1,6 +1,6 @@
 {
   "name": "brain-games-jek_rock",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Brain Games - games you can play",
   "scripts": {
     "babel-node": "babel-node",
