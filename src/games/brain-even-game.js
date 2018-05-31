@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import startGame, { random } from './game-core';
+import startGame, { random } from '../game-core';
 
 const isEven = number => number % 2 === 0;
 
