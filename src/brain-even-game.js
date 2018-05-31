@@ -9,19 +9,22 @@ export default () => {
 
   const userName = askUserName();
 
-  const randomFrom = 1;
-  const randomTo = 100;
+  const min = 1;
+  const max = 100;
+  const questionsCount = 3;
 
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = random(randomFrom, randomTo);
-    console.log(`Question: ${randomNumber}`);
+  for (let i = 0; i < questionsCount; i += 1) {
+    const question = random(min, max);
+    const answer = isEven(question) ? 'yes' : 'no';
 
-    const userInput = readlineSync.question('Your answer: ');
+    console.log(`Question: ${question}`);
 
-    if ((isEven(randomNumber) && userInput === 'yes') || (!isEven(randomNumber) && userInput === 'no')) {
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${isEven(randomNumber) ? 'yes' : 'no'}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(question) ? 'yes' : 'no'}'.\nLet's try again, ${userName}!`);
       return;
     }
   }
