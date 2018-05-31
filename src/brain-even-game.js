@@ -1,33 +1,18 @@
-import readlineSync from 'readline-sync';
-import { askUserName, random } from './index';
+import { cons } from 'hexlet-pairs';
+import startGame, { random } from './game-core';
 
 const isEven = number => number % 2 === 0;
 
-export default () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
-
-  const userName = askUserName();
-
+const getTask = () => {
   const min = 1;
   const max = 100;
-  const questionsCount = 3;
 
-  for (let i = 0; i < questionsCount; i += 1) {
-    const question = random(min, max);
-    const answer = isEven(question) ? 'yes' : 'no';
+  const question = random(min, max);
+  const answer = isEven(question) ? 'yes' : 'no';
 
-    console.log(`Question: ${question}`);
+  return cons(question, answer);
+};
 
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${isEven(question) ? 'yes' : 'no'}'.\nLet's try again, ${userName}!`);
-      return;
-    }
-  }
-
-  console.log(`Congratulations, ${userName}!`);
+export default () => {
+  startGame('Answer "yes" if number even otherwise answer "no"', getTask);
 };
