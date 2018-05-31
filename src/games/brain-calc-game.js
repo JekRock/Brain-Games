@@ -10,7 +10,7 @@ const getRandomNumber = () => {
 
 const getTask = () => {
   const min = 1;
-  const max = 2;
+  const max = 3;
 
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
@@ -24,6 +24,9 @@ const getTask = () => {
       task = cons(`${firstNumber} + ${secondNumber}`, (firstNumber + secondNumber).toString());
       break;
     case 2:
+      task = cons(`${firstNumber} - ${secondNumber}`, (firstNumber - secondNumber).toString());
+      break;
+    case 3:
       task = cons(`${firstNumber} * ${secondNumber}`, (firstNumber * secondNumber).toString());
       break;
     default:
