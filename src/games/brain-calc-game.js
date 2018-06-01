@@ -1,19 +1,16 @@
 import { cons } from 'hexlet-pairs';
-import startGame, { random } from '../game-core';
+import startGame from '../game-core';
+import random from '../utils';
 
-const getRandomNumber = () => {
-  const min = 1;
-  const max = 20;
+const min = 1;
+const max = 3;
 
-  return random(min, max);
-};
+const minNumber = 1;
+const maxNumber = 20;
 
 const getTask = () => {
-  const min = 1;
-  const max = 3;
-
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = random(minNumber, maxNumber);
+  const secondNumber = random(minNumber, maxNumber);
 
   let task;
 

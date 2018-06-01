@@ -1,12 +1,13 @@
 import { cons } from 'hexlet-pairs';
-import startGame, { random } from '../game-core';
+import startGame from '../game-core';
+import random from '../utils';
+
+const min = 1;
+const max = 100;
 
 const isEven = number => number % 2 === 0;
 
 const getTask = () => {
-  const min = 1;
-  const max = 100;
-
   const question = random(min, max);
   const answer = isEven(question) ? 'yes' : 'no';
 

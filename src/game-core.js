@@ -1,27 +1,19 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-const askUserName = () => {
-  const name = readlineSync.question('May I have your name? ');
-
-  console.log(`Hello, ${name}!\n`);
-
-  return name;
-};
+const questionsCount = 3;
 
 const getQuestion = task => car(task);
 
 const getAnswer = task => cdr(task);
 
-export const random = (from, to) => Math.floor(Math.random() * to) + from;
-
 export default (gameDescription, getTask) => {
   console.log('Welcome to the Brain Games!');
   console.log(`${gameDescription}\n`);
 
-  const userName = askUserName();
+  const userName = readlineSync.question('May I have your name? ');
 
-  const questionsCount = 3;
+  console.log(`Hello, ${userName}!\n`);
 
   for (let i = 0; i < questionsCount; i += 1) {
     const task = getTask();
