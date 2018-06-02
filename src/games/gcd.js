@@ -2,7 +2,6 @@ import { cons } from 'hexlet-pairs';
 import startGame from '../game-core';
 import random from '../utils';
 
-
 const minNumber = 1;
 const maxNumber = 100;
 
