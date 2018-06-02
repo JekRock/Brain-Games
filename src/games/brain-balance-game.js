@@ -9,18 +9,14 @@ const balanceNumber = (inputNumber) => {
   const sortedNumbers = String(inputNumber).split('').sort().map(Number);
   const len = sortedNumbers.length - 1;
 
-  const iter = (input) => {
-    const numbers = input;
-    const diff = numbers[len] - numbers[0];
-
-    if (diff <= 1) {
-      return numbers.join('');
-    }
-    numbers[0] += 1;
-    numbers[len] -= 1;
-    return iter(numbers.sort());
-  };
-  return iter(sortedNumbers);
+  let diff = sortedNumbers[len] - sortedNumbers[0];
+  while (diff > 1) {
+    sortedNumbers[0] += 1;
+    sortedNumbers[len] -= 1;
+    sortedNumbers.sort();
+    diff = sortedNumbers[len] - sortedNumbers[0];
+  }
+  return sortedNumbers.join('');
 };
 
 const getTask = () => {
