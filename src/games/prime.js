@@ -2,10 +2,13 @@ import { cons } from 'hexlet-pairs';
 import startGame from '../game-core';
 import random from '../utils';
 
-const min = 1;
+const min = -10;
 const max = 100;
 
 const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
   for (let i = 2; i <= Math.sqrt(number); i += 1) {
     if (number % i === 0) {
       return false;
